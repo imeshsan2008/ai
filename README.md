@@ -1,1 +1,1 @@
-# ai.imeshsan2008.github.io
+# AI Image Detector
