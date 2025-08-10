@@ -635,7 +635,8 @@
       uploadContent.style.display = 'block';
       clearBtn.style.display = 'none';
       detectBtn.disabled = true;
-      
+      fileInput.disabled = false;
+
       // Reset to default view
       processing.style.display = 'none';
       results.style.display = 'none';
@@ -647,7 +648,7 @@
         alert('Please upload an image file (JPG or PNG)');
         return;
       }
-
+ 
       // Remove existing image
       const existingImage = document.getElementById('uploaded-image');
       if (existingImage) existingImage.remove();
@@ -661,7 +662,8 @@
       img.src = url;
       img.id = 'uploaded-image';
       img.onload = () => URL.revokeObjectURL(url);
-      
+            fileInput.disabled = true;
+
       uploadContent.style.display = 'none';
       uploadArea.appendChild(img);
       clearBtn.style.display = 'flex';
